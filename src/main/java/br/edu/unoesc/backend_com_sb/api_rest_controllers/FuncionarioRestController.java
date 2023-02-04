@@ -1,7 +1,9 @@
 package br.edu.unoesc.backend_com_sb.api_rest_controllers;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,8 +20,10 @@ import br.edu.unoesc.backend_com_sb.model.Funcionario;
 @RestController
 @RequestMapping(value = "/api")
 public class FuncionarioRestController {
-	Funcionario f1 = new Funcionario("Fulano", 1 ,new BigDecimal("1500.00"));
-	Funcionario f2 = new Funcionario("Goiabinha Boy", 2 ,new BigDecimal("2200.00"));
+	SimpleDateFormat sm = new SimpleDateFormat("mm-dd-yyyy");
+	
+	Funcionario f1 = new Funcionario("Fulano", 1 ,new BigDecimal("1500.00"), new Date());
+	Funcionario f2 = new Funcionario("Goiabinha Boy", 2 ,new BigDecimal("2200.00"),new Date());
 	
 	List<Funcionario> Funcionarios;
 	
